@@ -87,7 +87,7 @@ struct ContentView: View {
             }
             .tag(3)
         
-        Text("Timer")
+        DivideView()
             .tabItem {
                 Image(systemName: "divide")
                 Text("Divide")

@@ -1,5 +1,5 @@
 //
-//  MinusView.swift
+//  DivideView.swift
 //  Calculator
 //
 //  Created by Dexter Ng on 2024-01-16.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct MinusView: View {
+struct DivideView: View {
     
     // MARK: Stored properties
     @State var firstNumber: Int = 1
@@ -15,7 +15,7 @@ struct MinusView: View {
     
     // MARK: Computed properties
     var sum: Int {
-        return firstNumber - secondNumber
+        return firstNumber / secondNumber
     }
     
     var body: some View {
@@ -36,7 +36,7 @@ struct MinusView: View {
                 })
 
                 HStack {
-                    Image(systemName: "minus")
+                    Image(systemName: "divide")
                         .font(.system(size: 35))
                     
                     Spacer()
@@ -60,14 +60,14 @@ struct MinusView: View {
             .padding()
             
         }
-        
+
     }
     
 }
 
 #Preview {
-    
-    TabView(selection: Binding.constant(2)) {
+
+    TabView(selection: Binding.constant(4)) {
         
         ContentView()
             .tabItem {
