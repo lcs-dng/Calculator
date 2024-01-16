@@ -63,5 +63,39 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView()
+    
+    TabView(selection: Binding.constant(3)) {
+        
+        ContentView()
+            .tabItem {
+                Image(systemName: "plus")
+                Text("Plus")
+            }
+            .tag(1)
+        
+        Text("Alarm")
+            .tabItem {
+                Image(systemName: "minus")
+                Text("Minus")
+            }
+            .tag(2)
+        
+        Text("Multiply")
+            .tabItem {
+                Image(systemName: "multiply")
+                Text("Multiply")
+            }
+            .tag(3)
+        
+        Text("Timer")
+            .tabItem {
+                Image(systemName: "divide")
+                Text("Divide")
+            }
+            .tag(4)
+        
+    }
+    // Change the accent colour for the currently active tab item
+    .accentColor(.orange)
+    
 }
