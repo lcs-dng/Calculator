@@ -1,13 +1,13 @@
 //
-//  ContentView.swift
+//  MinusView.swift
 //  Calculator
 //
-//  Created by Dexter Ng on 2024-01-15.
+//  Created by Dexter Ng on 2024-01-16.
 //
 
 import SwiftUI
 
-struct ContentView: View {
+struct MinusView: View {
     
     // MARK: Stored properties
     @State var firstNumber: Int = 1
@@ -15,10 +15,11 @@ struct ContentView: View {
     
     // MARK: Computed properties
     var sum: Int {
-        return firstNumber + secondNumber
+        return firstNumber - secondNumber
     }
     
     var body: some View {
+        
         HStack {
             
             Spacer()
@@ -35,7 +36,7 @@ struct ContentView: View {
                 })
 
                 HStack {
-                    Image(systemName: "plus")
+                    Image(systemName: "minus")
                         .font(.system(size: 35))
                     
                     Spacer()
@@ -59,43 +60,11 @@ struct ContentView: View {
             .padding()
             
         }
+        
     }
+    
 }
 
 #Preview {
-    
-    TabView(selection: Binding.constant(1)) {
-        
-        ContentView()
-            .tabItem {
-                Image(systemName: "plus")
-                Text("Plus")
-            }
-            .tag(1)
-        
-        MinusView()
-            .tabItem {
-                Image(systemName: "minus")
-                Text("Minus")
-            }
-            .tag(2)
-        
-        Text("Multiply")
-            .tabItem {
-                Image(systemName: "multiply")
-                Text("Multiply")
-            }
-            .tag(3)
-        
-        Text("Timer")
-            .tabItem {
-                Image(systemName: "divide")
-                Text("Divide")
-            }
-            .tag(4)
-        
-    }
-    // Change the accent colour for the currently active tab item
-    .accentColor(.orange)
-    
+    MinusView()
 }
